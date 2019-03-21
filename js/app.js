@@ -6,6 +6,8 @@ const input = document.querySelector("#mainInput");
 const enterBtn = document.querySelector("#enterBtn");
 const rList = document.querySelector("#reminderList");
 const loading = document.querySelector('#spinner');
+const datatable = document.querySelector('#maintable');
+const headers = document.querySelector('#datatable');
 const reminders = rList;
 console.log("loading", loading)
 //********************   CONTROLLERS ***********************
@@ -14,6 +16,29 @@ const displayInput = () => {
   
   // console.log(reminders.inner)
 }
+
+const addRowToTable = (args) => {
+
+  console.log(`adding to ${datatable.rows.length + 1} row for datatable`)
+
+  const fields = Object.values(args);
+  const rowIndex = datatable.rows.length;
+  let row = datatable.insertRow(rowIndex);
+
+  for(let j = 0; j < datatable.rows[0].cells.length; j++) {
+    let cell = row.insertCell(j);
+    if (j === 0) {
+      cell.className = "mdl-data-table__cell--non-numeric";
+    }
+    cell.innerText = fields[j];
+  }
+}
+
+addRowToTable({
+  Name: 'Food',
+  Quantity: 3,
+  Date: 'YYYY-MM-DD'
+})
 
 const addReminder = (args) => {
 
@@ -38,7 +63,6 @@ const createToDoList = (todos) => {
   for (i in items) {
     addReminder(items[i]);
   }
-
 }
 
 const formatMessage = (response) => {

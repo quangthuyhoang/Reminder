@@ -12,7 +12,7 @@ self.addEventListener('activate', function(event) {
 })
 
 self.addEventListener('fetch', function (event) {
-  console.log(navigator)
+  // console.log(navigator)
   if(!navigator.onLine) { // if you know you're offlilne
     event.respondWith(new Response(
     '<h1>Offline..<h1>', {headers: { 'Content-Type': 'text/html'}}))

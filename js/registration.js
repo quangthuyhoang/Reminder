@@ -8,9 +8,9 @@
 //   .catch(err => console.log("There's a problem \n"))
 // }
 
-console.log(navigator)
-if('serviceWorker' in navigator) {
-navigator.serviceWorker.register('./sw-min.js')
-.then(r => console.log('Service Worker Registered'))
-.catch(console.error);
-}
+
+// if('serviceWorker' in navigator) {
+// navigator.serviceWorker.register('./sw-min.js')
+// .then(r => console.log('Service Worker Registered'))
+// .catch(console.error);
+// }
