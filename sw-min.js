@@ -7,7 +7,7 @@ self.addEventListener('install', function(event) {
   self.skipWaiting();
 });
 
-self.('activate', function(event) {
+self.addEventListener('activate', function(event) {
   console.log('SW  v%s activated at', version, new Date().toLocaleDateString());
 })
 
