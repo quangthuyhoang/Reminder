@@ -14,7 +14,7 @@
     <style>
       .center {
         text-align: center;
-        paddding: 10px;
+        padding: 10px;
       }
       .main{padding:40px;} 
     </style>
@@ -38,8 +38,8 @@
         </div>
         <div class="center">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input value="hi" onkeyup="displayInput()" id="mainInput"class="mdl-textfield__input" type="text" placeholder="Enter Something Here">
-              <label class="mdl-textfield__label" for="mainInput">Save a reminder</label>
+              <input value="hi" onkeyup="displayInput()" id="messageInput"class="mdl-textfield__input" type="text" placeholder="Enter Something Here">
+              <label class="mdl-textfield__label" for="messageInput">Save a reminder</label>
           </div>
           main
         </div>
@@ -53,32 +53,42 @@
               <div class=""></div>
           </div>
           <div>
-          <table ID="datatable" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-            <thead>
-              <tr>
-                <th class="mdl-data-table__cell--non-numeric">Name</th>
-                <th>Quantity</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody id="maintable">
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
-                <td>25</td>
-                <td>$2.90</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
-                <td>50</td>
-                <td>$1.25</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
-                <td>10</td>
-                <td>$2.35</td>
-              </tr>
-            </tbody>
-          </table>
+
+              <div class="center">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input  oninput="captureUPC(this.value)" id="mainInput" class="mdl-textfield__input" type="text" placeholder="Enter Something Here">
+                      <label class="mdl-textfield__label" for="mainInput">Scan UPC</label>
+                  </div>
+                  
+                </div>
+                <div class="center">
+                  <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
+                        <table ID="datatable" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                            <thead>
+                              <tr>
+                                <th class="mdl-data-table__cell--non-numeric">Name</th>
+                                <th>Quantity</th>
+                                <th>Date</th>
+                              </tr>
+                            </thead>
+                            <tbody id="maintable">
+                              <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+                                <td>25</  td>
+                                <td>$2.90</td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+                    </div>
+                    <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
+                      <span id="activeSelection">Active click</span>
+                      </div>
+                  </div>
+                    
+                </div>
+          
         </div>
           <div>
               <ol id="reminderList" class="demo-list-item mdl-list">
